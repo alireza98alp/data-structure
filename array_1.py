@@ -30,3 +30,6 @@ class array():
             s += str(self.__arr[i])+', '
         s += '\b\b]'
         return s
+
+    def __len__(self) -> int:
+        return self.__nitem
