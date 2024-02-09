@@ -1,7 +1,7 @@
-from array_1 import array
+from array_1 import Array
 
 
-class orderedarray(array):
+class OrderedArray(Array):
     def __find(self, item):
         low = 0
         high = self._nitem-1
@@ -23,10 +23,3 @@ class orderedarray(array):
         for i in range(self._nitem, index, -1):
             self._arr[i] = self._arr[i-1]
         self._arr[index] = item
-
-
-a1 = orderedarray(11)
-for i in range(1, 9):
-    a1.append(2**i)
-a1.append(100)
-print(a1)

@@ -1,4 +1,4 @@
-class array():
+class Array():
     def __init__(self, maxsize: int):
         self.maxsize = maxsize
         self._arr = [None for _ in range(self.maxsize)]
