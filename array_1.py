@@ -24,12 +24,12 @@ class array():
                 for j in range(i, self._nitem):
                     self._arr[j] = self._arr[j+1]
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         if self._nitem:
             s = '['
             for i in range(self._nitem):
                 s += str(self._arr[i])+', '
-                s += '\b\b]'
+            s += '\b\b]'
             return s
         else:
             return '[ ]'
