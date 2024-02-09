@@ -15,7 +15,7 @@ class Array():
             self._arr[self._nitem] = item
             self._nitem += 1
         else:
-            raise ValueError('array is full')
+            raise Exception('array is full')
 
     def delete(self, item):
         for i in range(self._nitem):

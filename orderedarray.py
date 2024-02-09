@@ -17,9 +17,15 @@ class OrderedArray(Array):
 
     def append(self, item):
         if self._nitem == self.maxsize:
-            raise ValueError('array is full')
+            raise Exception('array is full')
         index = self.__find(item)
-        self._nitem += 1
         for i in range(self._nitem, index, -1):
             self._arr[i] = self._arr[i-1]
+        self._nitem += 1
         self._arr[index] = item
+
+    def delete(self, item):
+        index = self.__find(item)
+        self._nitem -= 1
+        for i in range(index, self._nitem):
+            self._arr[i] = self._arr[i+1]
