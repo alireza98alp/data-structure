@@ -1,3 +1,6 @@
+from sort import insertSort
+
+
 class Array():
     def __init__(self, maxsize: int):
         self.maxsize = maxsize
@@ -36,3 +39,6 @@ class Array():
 
     def __len__(self) -> int:
         return self._nitem
+
+    def sort(self):
+        insertSort(self._arr)
