@@ -1,4 +1,4 @@
-from array_1 import Array
+from array_ import Array
 
 
 class OrderedArray(Array):
