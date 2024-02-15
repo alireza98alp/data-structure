@@ -9,7 +9,7 @@ class Stack():
             raise Exception('stack is empty')
         else:
             self._nitem -= 1
-            return self._stack[self._nitem+1]
+            return self._stack[self._nitem]
 
     def Push(self, item):
         if self._nitem == self._maxitem:
@@ -21,8 +21,3 @@ class Stack():
 
     def __len__(self):
         return self._nitem
-
-
-s = Stack(12)
-for _ in range(13):
-    s.Push(_*5)
