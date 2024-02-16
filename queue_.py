@@ -31,3 +31,16 @@ class Queue():
 
     def __len__(self):
         return self._nitems
+
+    def __str__(self):
+        if len(self) == 0:
+            return '[ ]'
+        else:
+            ans = '['
+            for i in range(1, len(self)+1):
+                j = i + self._first
+                if j >= self._maxsize:
+                    j -= self._maxsize
+                ans += f'{self._queue[j]}, '
+            ans += '\b\b]'
+            return ans
