@@ -1,4 +1,4 @@
-class Queue_():
+class Queue():
     def __init__(self, maxsize: int) -> None:
         self._maxsize = maxsize
         self._queue = [None] * maxsize
@@ -29,8 +29,5 @@ class Queue_():
                 self._first += 1
             return tmp
 
-
-q = Queue_(10)
-for i in range(9):
-    q.insert(i)
-    print(i)
+    def __len__(self):
+        return self._nitems
