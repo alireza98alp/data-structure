@@ -1,5 +1,12 @@
 class node():
     def __init__(self, data, next=None) -> None:
+        """
+        Initializes a Node with a value and an optional link to the next node.
+
+        Args:
+            value: The value to store in the Node.
+            next_node: Reference to the next Node (default is None).
+        """
         self._data = data
         self._next = next
 
@@ -18,12 +25,10 @@ class LinkedList():
         self._head._next = new_node
         self._head = new_node
         self._nitem += 1
-# TODO:
 
     def delete(self, item):
         pass
 
-# FIXME:
     def __str__(self):
         node = self._first
         ans = ''
@@ -46,19 +51,3 @@ class LinkedList():
             i += 1
             n = n._next
         return 'not founded'
-
-
-l1 = LinkedList()
-l1.append(3)
-l1.append(4)
-l1.append(5)
-l1.append(6)
-l1.append(7)
-l1.append(8)
-l1.append(9)
-l1.append(11)
-l1.append(10)
-l1.append(12)
-print(l1)
-print(l1.search(6))
-print(len(l1))
