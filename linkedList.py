@@ -33,6 +33,11 @@ class LinkedList():
         self._nitem += 1
 
     def delete(self, item):
+        """
+        Deletes the first occurrence of the given item from the linked list.
+        the item is not found, does nothing.
+        Decrements the number of items in the list by one if the item is deleted.
+        """
         node = self._first
         if node._data == item:
             self._first = node._next
