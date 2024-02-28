@@ -71,6 +71,9 @@ class LinkedList():
         return ans
 
     def __len__(self):
+        """
+        Returns the number of items in the linked list.
+        """
         return self._nitem
 
     def search(self, item):
