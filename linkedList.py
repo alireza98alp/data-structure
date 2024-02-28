@@ -77,6 +77,11 @@ class LinkedList():
         return self._nitem
 
     def search(self, item):
+        """
+        Searches for the given item in the linked list and returns its index.
+        If the item is not found, returns 'not founded'.
+        If the linked list is empty, returns 'linked list is empty'.
+        """
         i = 0
         if not self._nitem:
             return 'linked list is empty'
