@@ -36,6 +36,7 @@ class LinkedList():
         node = self._first
         if node._data == item:
             self._first = node._next
+            self._nitem -= 1
         else:
             prev_node = node
             while node._next:
