@@ -1,11 +1,11 @@
-class node():
+class Node():
     def __init__(self, data, next=None) -> None:
         """
         Initializes a Node with a value and an optional link to the next node.
 
         Args:
             value: The value to store in the Node.
-            next_node: Reference to the next Node (default is None).
+            next: Reference to the next Node (default is None).
         """
         self._data = data
         self._next = next
@@ -14,12 +14,18 @@ class node():
 class LinkedList():
 
     def __init__(self) -> None:
-        self._first = node(None)
+        self._first = Node(None)
         self._head = self._first
         self._nitem = 0
 
     def append(self, item):
-        new_node = node(item)
+        """
+        Appends a new node with the given data to the end of the list.
+
+        Args:
+            item: The item to be added to the list.
+        """
+        new_node = Node(item)
         if not self._nitem:
             self._first = new_node
         self._head._next = new_node
@@ -27,9 +33,27 @@ class LinkedList():
         self._nitem += 1
 
     def delete(self, item):
-        pass
+        node = self._first
+        prev_node = node
+        while node._next:
+            if node._data == item:
+                prev_node._next = node._next
+                self._nitem -= 1
+                break
+            prev_node = node
+            node = node._next
+        else:
+            if node._data == item:
+                self._nitem -= 1
+                prev_node._next = None
 
     def __str__(self):
+        """
+        Returns a string representation of the linked list.
+
+        Returns:
+            A string showing the nodes in the list.
+        """
         node = self._first
         ans = ''
         while node:
@@ -51,3 +75,15 @@ class LinkedList():
             i += 1
             n = n._next
         return 'not founded'
+
+
+l1 = LinkedList()
+l1.append(3)
+l1.append(4)
+l1.append(5)
+l1.append(6)
+l1.append(7)
+l1.append(8)
+print(l1)
+l1.delete(8)
+print(l1)
