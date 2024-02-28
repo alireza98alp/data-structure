@@ -12,6 +12,18 @@ class Node():
 
 
 class LinkedList():
+    """
+    A class that represents a singly linked list of items.
+    Attributes:
+        _first: The first node of the list.
+        _nitem: The number of items in the list.
+    Methods:
+        __init__: Initializes an empty linked list.
+        __len__: Returns the number of items in the list.
+        append: Adds a new item to the end of the list.
+        delete: Deletes the first occurrence of the given item from the list.
+        search: Searches for the given item in the list and returns its index.
+    """
 
     def __init__(self) -> None:
         self._first = Node(None)
