@@ -34,18 +34,21 @@ class LinkedList():
 
     def delete(self, item):
         node = self._first
-        prev_node = node
-        while node._next:
-            if node._data == item:
-                prev_node._next = node._next
-                self._nitem -= 1
-                break
-            prev_node = node
-            node = node._next
+        if node._data == item:
+            self._first = node._next
         else:
-            if node._data == item:
-                self._nitem -= 1
-                prev_node._next = None
+            prev_node = node
+            while node._next:
+                if node._data == item:
+                    prev_node._next = node._next
+                    self._nitem -= 1
+                    break
+                prev_node = node
+                node = node._next
+            else:
+                if node._data == item:
+                    self._nitem -= 1
+                    prev_node._next = None
 
     def __str__(self):
         """
@@ -75,15 +78,3 @@ class LinkedList():
             i += 1
             n = n._next
         return 'not founded'
-
-
-l1 = LinkedList()
-l1.append(3)
-l1.append(4)
-l1.append(5)
-l1.append(6)
-l1.append(7)
-l1.append(8)
-print(l1)
-l1.delete(8)
-print(l1)
