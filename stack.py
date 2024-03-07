@@ -15,7 +15,7 @@ class Stack():
         '''returns top item without removing it'''
         return self._stack[self._nitem]
 
-    def Push(self, item):
+    def push(self, item):
         if self._nitem == self._maxitem:
             raise Exception('stack is full')
         else:
