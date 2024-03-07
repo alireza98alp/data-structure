@@ -13,7 +13,7 @@ class Stack():
 
     def top(self):
         '''returns top item without removing it'''
-        return self._stack[self._nitem]
+        return self._stack[self._nitem-1]
 
     def push(self, item):
         if self._nitem == self._maxitem:
