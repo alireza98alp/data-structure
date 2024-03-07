@@ -6,7 +6,7 @@ def parenthesesCheck(exp: str) -> bool:
     s = Stack(len(exp))
     for char in exp:
         if char == '(':
-            s.Push(char)
+            s.push(char)
         elif char == ')':
             if len(s):
                 s.pop()
